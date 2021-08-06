@@ -17,15 +17,14 @@ def ExtractShortLang(value: str) -> str:
 		raise Exception("value cannot be empty")
 
 	value = value.lower()
-	s = langList[value]
-	if s == "" or s.isspace():
-		s = langListR[value]
-		if s == "" or s.isspace():
-			raise Exception(f"{value} is not a valid language")
-		else:
-			return s
-
-	return s
+	if value == "auto":
+		return value
+	elif value in langList:
+		return value
+	elif value in langListR:
+		return value
+	else:
+		raise Exception(f"{value} is not a valid language")
 
 
 def RemoveShortsWithStrs(value: str) -> str:

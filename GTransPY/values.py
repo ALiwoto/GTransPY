@@ -114,7 +114,7 @@ gHostUrl = (("\u0068\u0074\u0074ps\u003a\u002f\u002f\u0074" +
 	"ransla\u0074e\u002e\u0067oo\u0067l\u0065\u002e\u0063o\u006d" + "\u002f") + 
 	"\u005f\u002fTransla\u0074\u0065W\u0065bs\u0065rv\u0065rUi\u002fda\u0074a\u002f" + 
 	"ba\u0074\u0063hex\u0065\u0063u\u0074e\u003f"
-	 +
+	+
 	rpcKey + rpcValue +
 	sidKey + sidKey +
 	blKey + blValue +
@@ -280,17 +280,17 @@ fReqGKey = "f.req\u003d" # not optional
 
 DoubleQSP      = "\\\","
 NonEscapeN     = "\\n"
-NonEscapeNV    = NonEscapeN + ","
+NonEscapeNV    = "\\n,"
 HttpRm         = "af.httprm"
-E4Value        = "\"e\"" + "," + "4" + ","
-NullCValue     ="null"+ ","
+E4Value        = "\"e\",4,"
+NullCValue     ="null,"
 GenericStr     = "," + "\"generic\""
 NullCValueR    = "," + "null"
 NeQ            = "\\n\""
 NullN          = "\n\"" + "," + "null"
 DiValue        = "\"di\""
 AkCloseQ       = "}'"
-WrbFr          = "\"wrb.fr\",\"" + rpcValue + "\""
+WrbFr          = "\"wrb.fr\",\"MkEWBc\""
 BoldOpen       = "\\u003cb\\u003e"
 BoldClose      = "\\u003c/b\\u003e"
 MiddleWave     = "\\\"," + "\\\""
@@ -300,9 +300,9 @@ ExampleFirst   = "null,\"\\u003cb\\u003e"
 ThreeE         = "\\\\" + "u003e"
 CeeE           = "\\\\" + "u003c"
 QuetUnicode    = "u0026#39;"
-StrAndCama     = "\\\"" + ","
-StringAndCama  = "\"" + ","
-CamaAndStr     = "," + "\\\""
+StrAndCama     = "\\\","
+StringAndCama  = "\","
+CamaAndStr     = ",\\\""
 NullAndCama    ="null,"
 TwoCama        = ",,"
 TwoStr         = "\"" + "\""

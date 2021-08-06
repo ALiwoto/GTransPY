@@ -11,7 +11,7 @@ from typing import Optional, Any, List, TypeVar, Callable, Type, cast
 
 
 T = TypeVar("T")
-minimum_condifence: float = 8.32
+minimum_condifence: float = 4.8
 
 
 def from_str(x: Any) -> str:
@@ -136,7 +136,9 @@ class Lang:
         return best
 
     def is_empty(self) -> bool:
-        return self.data == None or len(self.data) == 0
+        return (self.data == None or
+            self.data.detections == None or
+            len(self.data.detections) == 0)
     
 
 
@@ -148,30 +150,41 @@ def translator_to_dict(x: Lang) -> Any:
     return to_class(Lang, x)
 
 
+@dataclass
+class Correction:
+    # an array of the corrected parts of the
+	# original input text
+    CorrectedParts: List[str]
+
+    # the whole string
+    CorrectedValue: str
+
+
+
 
 @dataclass
 class WotoTr:
     # Pronunciation of the original text
-    OriginalPronunciation: str
+    OriginalPronunciation: str = None
 
     # Pronunciation of the translated text
-    TranslatedPronunciation: str
+    TranslatedPronunciation: str = None
 
     # the input text from user
-    UserText: str
+    UserText: str = ""
 
     # originalText is the original data recieved from google's
 	# server (which is in protobuf's format)
-    originalText: str
+    originalText: str = ""
 
     # Translations is a list of translated string recieved from
 	# google's servers
-    Translations: List[str]
+    Translations: List[str] = None
 
-    From: str
-    To: str
+    From: str = "en"
+    To: str = ""
 
-    Corrected: Optional[Corrected]
+    Corrected: Optional[Correction] = None
 
     HasWrongness: bool = False
 
@@ -214,14 +227,4 @@ class WotoTr:
 
 
 
-
-
-@dataclass
-class Corrected:
-    # an array of the corrected parts of the
-	# original input text
-    CorrectedParts: List[str]
-
-    # the whole string
-    CorrectedValue: str
 

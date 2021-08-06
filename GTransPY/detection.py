@@ -27,7 +27,7 @@ def DetectLanguage(text: str) -> Lang:
             raise Exception(f"Got status code of {resp.status_code} from API")
         if resp.content:
             strs = re.split('<pre>|</pre>', resp.content.decode())
-            print(strs[1])
+            #print(strs[1])
             return Lang.from_dict(dict(json.decode(strs[1])))
         else:
             raise Exception("unexpected response from API server")
