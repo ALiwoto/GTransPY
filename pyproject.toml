@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "GTransPY"
 version = "0.0.12"
-description = "An API Wrapper for Official Anilist.co GraphQL API"
+description = "An API Wrapper for Google translate"
 authors = ["ALiwoto <aminnimaj@gmail.com>", "Sayan Biswas <sayan@pokurt.me>"]
 license = "Unlicense License"
 packages = [
